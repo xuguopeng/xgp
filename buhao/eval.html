@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>优服务</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
+	<header>
+		<span tapmode class="back"><img src="./image/back.png"/></span>
+		<span>用户评价</span>
+	</header>
+	<div id="app">
+		<textarea class="eval_t" v-model="eval" maxlength="140" placeholder="请填写您的评价"></textarea>
+		<div class="eval_sub ui_border_b">
+			<span class="score">评分：<i @click="doScore(1)" :class="{'active': score>=1}"></i><i @click="doScore(2)" :class="{'active': score>=2}"></i><i @click="doScore(3)" :class="{'active': score>=3}"></i><i @click="doScore(4)" :class="{'active': score>=4}"></i><i @click="doScore(5)" :class="{'active': score>=5}"></i></span>
+			<span class="r">此处可输入{{140-eval.length}}个字</span>
+		</div>
+		<div class="big_btn">提交评价</div>
+	</div>
+</body>
+<script type="text/javascript" src="./script/vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: '#app',
+		data: {
+			eval: '',
+			score: 1
+		},
+		methods: {
+			doScore: function(i){
+				this.score = i
+			}
+		},
+		mounted:function(){
+			var $this = this;
+			apiready = function() {
+				
+			};
+		}
+	});
+</script>
+</html>

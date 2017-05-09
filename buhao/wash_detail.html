@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>优服务</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
+	<header>
+		<span tapmode class="back"><img src="./image/back.png"/></span>
+		<span>个人洗护</span>
+	</header>
+	<div id="app" class="padt10">
+		<ul class="cloth_type ui_border_b">
+			<li v-for="(item,index) of type" :class="{'ui_border_b': index!=(type.length-1)}">
+				<p class="name">{{item.name}}</p>
+				<p class="price">{{item.price}}元/件</p>
+				<div class="change_cart_num"><span @click="sub(item)" class="sub"></span><span class="num">{{item.num}}</span><span @click="plus(item)" class="plus"></span></div>
+			</li>
+		</ul>
+		<div class="go_buy">
+			<p>共{{count}}件</p>
+			<p>合计：{{sum}}元</p>
+			<span class="btn" :class="{'active': count > 0}">去结算</span>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="./script/common.js"></script>
+<script type="text/javascript" src="./script/vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: '#app',
+		data: function(){
+			return {
+				type: [{
+					name: '衬衫',
+					price: 10,
+					num: 0
+				},{
+					name: '裤装',
+					price: 15,
+					num: 0
+				},{
+					name: '其他',
+					price: 15,
+					num: 0
+				}]
+			}
+		},
+		computed: {
+			sum: function(){
+				var $this = this;
+				var sum = 0;
+				$this.type.forEach(function(item){
+					sum += item.price * item.num
+				});
+				return sum;
+			},
+			count: function(){
+				var $this = this;
+				var count = 0;
+				$this.type.forEach(function(item){
+					count += item.num
+				});
+				return count;
+			}
+		},
+		methods: {
+			sub: function(item){
+        		if(item.num == 0) return;
+        		item.num --;
+        	},
+        	plus: function(item){
+        		item.num ++;
+        	}
+		},
+		mounted:function(){
+			var $this = this;
+			apiready = function() {
+				api.parseTapmode();
+			};
+		}
+	});
+</script>
+</html>

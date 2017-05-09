@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>优服务</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
+	<header>
+		<span tapmode onclick="closeWin()" class="back"><img src="./image/back.png"/></span>
+		<span>在线商城</span>
+	</header>
+	<div id='app'>
+		<img class="goods_img" src="./image/333333333333333.jpg"/>
+		<div class="goods_info">
+			<p class="name">蓝月亮洗衣液</p>
+			<p class="sub">婴幼儿专洗</p>
+			<p class="price">￥：99.9元</p>
+			<div class="change_cart_num"><span @click="sub()" class="sub"></span><span class="num">{{num}}</span><span @click="plus()" class="plus"></span></div>
+		</div>
+		<div class="goods_detail">
+			<ul class="tabs ui_border_b">
+				<li @click="changeTab(1)" :class="{'active': index == 1}">商品详情</li>
+				<li @click="changeTab(2)" :class="{'active': index == 2}">累计评价</li>
+			</ul>
+			<div class="detail" v-show="index==1">
+				撒客户发开始教导爱是肯德基和反馈<br>
+				asdfjasdjklfaasdf
+			</div>
+			<div v-show="index==2">
+				<ul class="comment_list">
+					<li class="ui_border_b">
+						<p class="p1">不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错</p>
+						<p class="p2">
+							<span>张三</span>
+							<span class="time">2017-5-4 17:00:16</span>
+							<span class="score">评分：2</span>
+						</p>
+					</li>
+					<li class="ui_border_b">
+						<p class="p1">不错不错不错不错不错不错不错不错不错不错不错不错</p>
+						<p class="p2">
+							<span>张三</span>
+							<span class="time">2017-5-4 17:00:16</span>
+							<span class="score">评分：2</span>
+						</p>
+					</li>
+				</ul>	
+			</div>
+		</div>
+		<div class="bottom_btns">
+			<div class="cart"><img src="./image/cart.png"/><p>购物车</p></div>
+			<div class="add_cart">加入购物车</div>
+			<div class="buy">立即购买</div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="./script/common.js"></script>
+	<script type="text/javascript" src="./script/vue.min.js"></script>
+	<script type="text/javascript">
+	    new Vue({
+	        el: '#app',
+	        data:{
+	        	index: 1,
+	        	num: 1
+	        },
+	        mounted:function(){
+	        	
+	        },
+	        methods: {
+	        	changeTab: function(i){
+	        		var $this = this;
+	        		$this.index = i;
+	        	},
+	        	sub: function(){
+	        		var $this = this;
+	        		if($this.num == 0) return;
+	        		$this.num --;
+	        	},
+	        	plus: function(){
+	        		var $this = this;
+	        		$this.num ++;
+	        	}
+	        }
+	    });
+	</script>
+</html>

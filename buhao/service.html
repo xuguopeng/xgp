@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>优服务</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
+	<header>
+		<span tapmode class="back"><img src="./image/back.png"/></span>
+		<span>家电维护</span>
+	</header>
+	<div id="app">
+		<img class="service_top_img" src="./image/444444444444.jpg"/>
+		<div class="service_container">
+			<div class="service_item">
+				<span class="label">支付费用</span><span class="value">￥30</span>
+			</div>
+			<div class="service_item">
+				<span class="label"><img src="./image/select.png"/></span><span class="value">支付方式</span>
+			</div>
+			<div class="service_item">
+				<span class="label"><img src="./image/select.png"/></span><span class="value">2017-5-5</span>
+			</div>
+			<div class="service_item">
+				<span class="label"><img src="./image/select.png"/></span><span class="value">12:00-16:00</span>
+			</div>
+			<div class="service_item">
+				<span class="label"><img src="./image/location.png"/></span><span class="value">西安高新区</span>
+			</div>
+			<div class="service_btn">预约下单</div>
+			
+			<div class="goods_detail">
+				<ul class="tabs ui_border_b">
+					<li @click="changeTab(1)" :class="{'active': index == 1}">服务详情</li>
+					<li @click="changeTab(2)" :class="{'active': index == 2}">累计评价</li>
+				</ul>
+				<div class="detail" v-show="index==1">
+					撒客户发开始教导爱是肯德基和反馈<br>
+					asdfjasdjklfaasdf
+				</div>
+				<div v-show="index==2">
+					<ul class="comment_list">
+						<li class="ui_border_b">
+							<p class="p1">不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错</p>
+							<p class="p2">
+								<span>张三</span>
+								<span class="time">2017-5-4 17:00:16</span>
+								<span class="score">评分：2</span>
+							</p>
+						</li>
+						<li class="ui_border_b">
+							<p class="p1">不错不错不错不错不错不错不错不错不错不错不错不错</p>
+							<p class="p2">
+								<span>张三</span>
+								<span class="time">2017-5-4 17:00:16</span>
+								<span class="score">评分：2</span>
+							</p>
+						</li>
+					</ul>	
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="./script/common.js"></script>
+<script type="text/javascript" src="./script/vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: '#app',
+		data: function(){
+			return {
+				index: 1
+			}
+		},
+		methods: {
+			changeTab: function(i){
+        		var $this = this;
+        		$this.index = i;
+        	}
+		},
+		mounted:function(){
+			var $this = this;
+			apiready = function() {
+				api.parseTapmode();
+			};
+		}
+	});
+</script>
+</html>

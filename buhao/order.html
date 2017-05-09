@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>优服务</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <style>
+    	.displayBlock {
+    		display:block;
+    	}
+    	.noDisplay {
+    		display:none;
+    	}
+    </style>
+</head>
+<body>
+	<div id="app">
+		<header>
+			<span tapmode class="back"><img src="./image/back.png"/></span>
+			<span>预约订单</span>
+		</header>
+		<ul class="tab_nav order ui_border_b">
+			<li @click="switchTab(0)" :class="{'active': index == 0}">未付款</li>
+			<li @click="switchTab(1)" :class="{'active': index == 1}">未完成</li>
+			<li @click="switchTab(2)" :class="{'active': index == 2}">已完成</li>
+			<li @click="switchTab(3)" :class="{'active': index == 3}">未完成</li>
+			<li @click="switchTab(4)" :class="{'active': index == 4}">已完成</li>
+		</ul>
+		<ul class="order_list" :class="{'displayBlock': index == 0 , 'noDisplay' : index != 0 }">
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<div class="goods ui_border_t">
+					<img src="./image/222222222222222222.jpg"/>
+					<p class="name">拖把 <span class="price">￥：100元</span></p>
+					<p class="type">颜色分类：绿色</p>
+				</div>
+				<div class="infos ui_border_t">
+					订单金额：合计￥39.9元， 共一件商品
+					<span class="btn">已完成</span>
+				</div>
+			</li>
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<div class="goods ui_border_t">
+					<img src="./image/222222222222222222.jpg"/>
+					<p class="name">拖把 <span class="price">￥：100元</span></p>
+					<p class="type">颜色分类：绿色</p>
+				</div>
+				<div class="infos ui_border_t">
+					订单金额：合计￥39.9元， 共一件商品
+					<span class="btn">去付款</span>
+				</div>
+			</li>
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<div class="goods ui_border_t">
+					<img src="./image/222222222222222222.jpg"/>
+					<p class="name">拖把 <span class="price">￥：100元</span></p>
+					<p class="type">颜色分类：绿色</p>
+				</div>
+				<div class="infos ui_border_t">
+					订单金额：合计￥39.9元， 共一件商品
+					<span tapmode class="btn">去评价</span>
+				</div>
+			</li>
+		</ul>
+		<ul class="order_list" :class="{'displayBlock': index == 1 , 'noDisplay' : index != 1 }">
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<div class="goods ui_border_t">
+					<img src="./image/222222222222222222.jpg"/>
+					<p class="name">拖把 <span class="price">￥：100元</span></p>
+					<p class="type">颜色分类：绿色</p>
+				</div>
+				<div class="infos ui_border_t">
+					订单金额：合计￥39.9元， 共一件商品
+					<span class="btn">去付款</span>
+				</div>
+			</li>
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<div class="goods ui_border_t">
+					<img src="./image/222222222222222222.jpg"/>
+					<p class="name">拖把 <span class="price">￥：100元</span></p>
+					<p class="type">颜色分类：绿色</p>
+				</div>
+				<div class="infos ui_border_t">
+					订单金额：合计￥39.9元， 共一件商品
+					<span class="btn">去付款</span>
+				</div>
+			</li>
+		</ul>
+		<ul class="order_list" :class="{'displayBlock': index == 2 , 'noDisplay' : index != 2 }">
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<div class="goods ui_border_t">
+					<img src="./image/222222222222222222.jpg"/>
+					<p class="name">拖把 <span class="price">￥：100元</span></p>
+					<p class="type">颜色分类：绿色</p>
+				</div>
+				<div class="infos ui_border_t">
+					订单金额：合计￥39.9元， 共一件商品
+					<span class="btn">提醒发货</span>
+				</div>
+			</li>
+		</ul>
+		<ul class="order_list" :class="{'displayBlock': index == 3 , 'noDisplay' : index != 3 }">
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<div class="goods ui_border_t">
+					<img src="./image/222222222222222222.jpg"/>
+					<p class="name">拖把 <span class="price">￥：100元</span></p>
+					<p class="type">颜色分类：绿色</p>
+				</div>
+				<div class="infos ui_border_t">
+					订单金额：合计￥39.9元， 共一件商品
+					<span class="btn">查看物流</span>
+				</div>
+			</li>
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<div class="goods ui_border_t">
+					<img src="./image/222222222222222222.jpg"/>
+					<p class="name">拖把 <span class="price">￥：100元</span></p>
+					<p class="type">颜色分类：绿色</p>
+				</div>
+				<div class="infos ui_border_t">
+					订单金额：合计￥39.9元， 共一件商品
+					<span class="btn">确认收货</span>
+				</div>
+			</li>
+		</ul>
+		<ul class="order_list" :class="{'displayBlock': index == 4 , 'noDisplay' : index != 4 }">
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<div class="goods ui_border_t">
+					<img src="./image/222222222222222222.jpg"/>
+					<p class="name">拖把 <span class="price">￥：100元</span></p>
+					<p class="type">颜色分类：绿色</p>
+				</div>
+				<div class="infos ui_border_t">
+					订单金额：合计￥39.9元， 共一件商品
+					<span tapmode class="btn">去评价</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="./script/common.js"></script>
+<script type="text/javascript" src="./script/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+    	el: '#app',
+    	data: {
+    		index: 0
+    	},
+    	methods: {
+    		switchTab : function(i) {
+				var $this = this;
+				if ($this.index == i) return;
+				$this.click = true;
+				$this.index = i;
+			}
+    	}
+    });
+</script>
+</html>

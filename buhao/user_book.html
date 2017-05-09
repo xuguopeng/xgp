@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>优服务</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <style>
+    	.displayBlock {
+    		display:block;
+    	}
+    	.noDisplay {
+    		display:none;
+    	}
+    </style>
+</head>
+<body>
+	<div id="app">
+		<header>
+			<span tapmode class="back"><img src="./image/back.png"/></span>
+			<span>预约订单</span>
+		</header>
+		<ul class="tab_nav ui_border_b">
+			<li @click="switchTab(0)" :class="{'active': index == 0}">未付款</li>
+			<li @click="switchTab(1)" :class="{'active': index == 1}">未完成</li>
+			<li @click="switchTab(2)" :class="{'active': index == 2}">已完成</li>
+		</ul>
+	
+		<ul class="book_list" :class="{'displayBlock': index == 0 , 'noDisplay' : index != 0 }">
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<p class="item ui_border_b">维修项目名称：冰箱维修</p>
+				<p class="item ui_border_b">预约时间：2017-5-4 11:06:42</p>
+				<p class="item ui_border_b">预付金额：30元</p>
+				<p class="item ui_border_b">用户信息：柚子    TEL:1231231232</p>
+				<p class="item ui_border_b">用户地址：西安市高新区</p>
+				<div class="ui_border_b input">
+					补差价 :450元
+				</div>
+				<div class="submit_btn">去付款</div>
+			</li>
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<p class="item ui_border_b">维修项目名称：冰箱维修</p>
+				<p class="item ui_border_b">预约时间：2017-5-4 11:06:42</p>
+				<p class="item ui_border_b">预付金额：30元</p>
+				<p class="item ui_border_b">用户信息：柚子    TEL:1231231232</p>
+				<p class="item ui_border_b">用户地址：西安市高新区</p>
+				<div class="ui_border_b input">
+					补差价 :450元
+				</div>
+				<div class="submit_btn">去付款</div>
+			</li>
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<p class="item ui_border_b">维修项目名称：冰箱维修</p>
+				<p class="item ui_border_b">预约时间：2017-5-4 11:06:42</p>
+				<p class="item ui_border_b">预付金额：30元</p>
+				<p class="item ui_border_b">用户信息：柚子    TEL:1231231232</p>
+				<p class="item ui_border_b">用户地址：西安市高新区</p>
+				<div class="ui_border_b input">
+					补差价 :450元
+				</div>
+				<div class="submit_btn">去付款</div>
+			</li>
+		</ul>
+		<ul class="book_list" id="yifukuan" :class="{'displayBlock': index == 1 , 'noDisplay' : index != 1}">
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<p class="item ui_border_b">维修项目名称：冰箱维修</p>
+				<p class="item ui_border_b">预约时间：2017-5-4 11:06:42</p>
+				<p class="item ui_border_b">预付金额：30元</p>
+				<p class="item ui_border_b">用户信息：柚子    TEL:1231231232</p>
+				<p class="item ui_border_b">用户地址：西安市高新区</p>
+				<div class="ui_border_b input">
+					补差价 :450元
+				</div>
+				<div class="submit_btn">确认付款</div>
+			</li>
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<p class="item ui_border_b">维修项目名称：冰箱维修</p>
+				<p class="item ui_border_b">预约时间：2017-5-4 11:06:42</p>
+				<p class="item ui_border_b">预付金额：30元</p>
+				<p class="item ui_border_b">用户信息：柚子    TEL:1231231232</p>
+				<p class="item ui_border_b">用户地址：西安市高新区</p>
+				<div class="ui_border_b input">
+					补差价 :450元
+				</div>
+				<div class="submit_btn">确认付款</div>
+			</li>
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<p class="item ui_border_b">维修项目名称：冰箱维修</p>
+				<p class="item ui_border_b">预约时间：2017-5-4 11:06:42</p>
+				<p class="item ui_border_b">预付金额：30元</p>
+				<p class="item ui_border_b">用户信息：柚子    TEL:1231231232</p>
+				<p class="item ui_border_b">用户地址：西安市高新区</p>
+				<div class="ui_border_b input">
+					补差价 :450元
+				</div>
+				<div class="submit_btn">确认付款</div>
+			</li>
+		</ul>
+		<ul class="book_list" id="yiwancheng" :class="{'displayBlock': index == 2 , 'noDisplay' : index != 2 }">
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<p class="item ui_border_b">维修项目名称：冰箱维修</p>
+				<p class="item ui_border_b">服务时间：2017-5-4 11:06:42</p>
+				<p class="item ui_border_b">支付金额：30元</p>
+				<p class="item ui_border_b">用户信息：柚子    TEL:1231231232</p>
+				<p class="item ui_border_b">用户地址：西安市高新区</p>
+				<div class="submit_btn">评价</div>
+			</li>
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<p class="item ui_border_b">维修项目名称：冰箱维修</p>
+				<p class="item ui_border_b">服务时间：2017-5-4 11:06:42</p>
+				<p class="item ui_border_b">支付金额：30元</p>
+				<p class="item ui_border_b">用户信息：柚子    TEL:1231231232</p>
+				<p class="item ui_border_b">用户地址：西安市高新区</p>
+				<div class="submit_btn">评价</div>
+			</li>
+			<li class="ui_border_b">
+				<div class="header">
+					<span class="no">订单编号:123123123</span>
+					<span class="time">下单时间：2017-5-4 11:05:38</span>
+				</div>
+				<p class="item ui_border_b">维修项目名称：冰箱维修</p>
+				<p class="item ui_border_b">服务时间：2017-5-4 11:06:42</p>
+				<p class="item ui_border_b">支付金额：30元</p>
+				<p class="item ui_border_b">用户信息：柚子    TEL:1231231232</p>
+				<p class="item ui_border_b">用户地址：西安市高新区</p>
+				<div class="submit_btn">评价</div>
+			</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="./script/common.js"></script>
+<script type="text/javascript" src="./script/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+    	el: '#app',
+    	data: {
+    		index: 0,
+    	},
+    	methods: {
+    		switchTab : function(i) {
+				var $this = this;
+				if ($this.index == i) return;
+				$this.click = true;
+				$this.index = i;
+			}
+    	}
+    });
+</script>
+</html>
